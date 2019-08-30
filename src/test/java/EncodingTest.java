@@ -5,7 +5,7 @@ public class EncodingTest {
     @Test
     public void cipherText_receiveInputText_String() {
         Encoding input = new Encoding();
-        String expected = "inputText";
+        String expected = input.inputText;
         assertEquals(expected, input.cipherText(input.getInputText()));
 
     }
