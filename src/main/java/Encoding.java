@@ -1,5 +1,6 @@
 public class Encoding {
-    public String inputText;
+    private String inputText;
+    public int key;
 
     public String cipherText(String inputText) {
         String cipheredText = inputText;
