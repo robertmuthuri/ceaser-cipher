@@ -1,5 +1,12 @@
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.*;
+import static org.junit.Assert.*;
 
-class EncodingTest {
+public class EncodingTest {
+    @Test
+    public void cipherText_receiveInputText_String() {
+        Encoding input = new Encoding();
+        String expected = "inputText";
+        assertEquals(expected, input.cipherText(input.getInputText()));
 
+    }
 }
