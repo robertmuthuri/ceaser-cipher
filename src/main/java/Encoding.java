@@ -1,16 +1,19 @@
 public class Encoding {
-    private String inputText = "";
+    private String plainText = "";
     private int key;
     private String cipheredText;
 
 
-    public String cipherText(String inputText, int Key) {
-        String cipheredText = inputText;
+    public  String encryptText(String inputText, int shiftKey) {
+       plainText = inputText;
+       key = shiftKey;
+
+
     return null;
     }
 
-    public String getInputText() {
-        return inputText;
+    public String getPlainText() {
+        return plainText;
     }
 
     public int getKey() {
@@ -18,7 +21,17 @@ public class Encoding {
     }
 
     public int setKey(int key) {
-        this.key = key;
+        if(key > 26 ) {
+            key = key % 26;
+            this.key = key;
+        } else if (key < 0) {
+            key = (key % 26) + 26;
+            this.key = key;
+        }
         return key;
+    }
+
+    public void setPlainText(String plainText) {
+        this.plainText = plainText;
     }
 }

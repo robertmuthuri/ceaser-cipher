@@ -5,7 +5,7 @@ public class EncodingTest {
     @Test
     public void encryptText_receiveInputText_true() {
         Encoding input = new Encoding();
-        String expected = input.getInputText();
+        String expected = input.getPlainText();
         assertEquals(true, expected instanceof String);
     }
 
@@ -19,7 +19,7 @@ public class EncodingTest {
     @Test
     public void encryptText_checkKeyIsWithinAlphabet_Integer() {
         Encoding input = new Encoding();
-        int expected = input.setKey(150);
+        int expected = input.setKey(-20);
         assertEquals(expected,input.getKey());
     }
 }
