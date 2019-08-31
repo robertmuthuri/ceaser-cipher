@@ -13,10 +13,16 @@ public class Encoding {
                 if(Character.isLowerCase(c)) {
                     char shiftC = (char)( c + key);
                     if(shiftC > 'z') {
-                        cipheredText += (char)(c - (26 - shiftC));
+                        cipheredText += (char)(shiftC - (26 - shiftC));
+                    } else {
+                        cipheredText += shiftC;
                     }
                 } else if (Character.isUpperCase(c)) {
-
+                    if(shiftC > 'Z') {
+                        cipheredText += (char)(shiftC - (26 - shiftC));
+                    } else {
+                        cipheredText += shiftC;
+                    }
                 }
 
             } else {
