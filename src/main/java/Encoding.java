@@ -1,13 +1,14 @@
 public class Encoding {
-    private String plainText = "";
+    private String plainText;
     private int key;
     private String cipheredText;
 
 
     public  String encryptText(String inputText, int shiftKey) {
        plainText = inputText;
+       cipheredText = "";
        key = shiftKey;
-        for (int i = 0; i < plainText.length; i++) {
+        for (int i = 0; i < plainText.length(); i++) {
             char c = plainText.charAt(i);
             if(Character.isLetter(c)) {
                 if(Character.isLowerCase(c)) {
@@ -18,6 +19,7 @@ public class Encoding {
                         cipheredText += shiftC;
                     }
                 } else if (Character.isUpperCase(c)) {
+                    char shiftC = (char)( c + key);
                     if(shiftC > 'Z') {
                         cipheredText += (char)(shiftC - (26 - shiftC));
                     } else {
@@ -29,8 +31,7 @@ public class Encoding {
                 cipheredText += c;
             }
         }
-
-    return null;
+    return cipheredText;
     }
 
     public String getPlainText() {
