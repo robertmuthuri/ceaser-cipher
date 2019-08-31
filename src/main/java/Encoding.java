@@ -35,4 +35,7 @@ public class Encoding {
         this.plainText = plainText;
     }
 
+    public String getCipheredText() {
+        return cipheredText;
+    }
 }

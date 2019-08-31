@@ -29,4 +29,11 @@ public class EncodingTest {
         String expected = input.getCipheredText();
         assertEquals(expected, input.getCipheredText());
     }
+
+    @Test
+    public void encryptText_encryptPlainTextToCipherText_String() {
+        Encoding input = new Encoding();
+        String expectedInput = input.getPlainText();
+        String expectedOutput = input.getCipheredText();
+    }
 }
