@@ -7,7 +7,10 @@ public class Encoding {
     public  String encryptText(String inputText, int shiftKey) {
        plainText = inputText;
        key = shiftKey;
+        for (int i = 0; i < plainText.length; i++) {
+            char c = plainText.charAt(i);
 
+        }
 
     return null;
     }
