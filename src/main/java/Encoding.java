@@ -9,7 +9,11 @@ public class Encoding {
        key = shiftKey;
         for (int i = 0; i < plainText.length; i++) {
             char c = plainText.charAt(i);
+            if(Character.isLetter(c)) {
 
+            } else {
+                cipheredText += c;
+            }
         }
 
     return null;
