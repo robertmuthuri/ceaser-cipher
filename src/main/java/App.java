@@ -10,5 +10,11 @@ public class App {
         Encoding input = new Encoding();
         String cipherText = input.encryptText(inputText, inputKey);
         System.out.println("Here is your encrypted message oh your majesty: " + cipherText);
+
+        Decoding output = new Decoding();
+        System.out.println("General, would you like to decrypt his majesty's message? If so enter appropriate key");
+        int decryptKey = Integer.parseInt(myConsole.readLine());
+        String decryptText = output.decryptText(cipherText, decryptKey);
+        System.out.println("General, his majesty's message is: " + decryptText);
     }
 }
