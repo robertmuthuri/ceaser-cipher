@@ -17,9 +17,16 @@ public class EncodingTest {
     }
 
     @Test
-    public void encryptText_checkKeyIsWithinAlphabet_Integer() {
+    public void encryptText_checkKeyIsWithinAlphabet_int() {
         Encoding input = new Encoding();
         int expected = input.setKey(-20);
         assertEquals(expected,input.getKey());
+    }
+
+    @Test
+    public void encryptText_checkCypherTextInitialized_String() {
+        Encoding input = new Encoding();
+        String expected = input.getCipheredText();
+        assertEquals(expected, input.getCipheredText());
     }
 }

@@ -34,4 +34,5 @@ public class Encoding {
     public void setPlainText(String plainText) {
         this.plainText = plainText;
     }
+
 }
