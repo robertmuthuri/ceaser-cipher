@@ -10,6 +10,11 @@ public class Encoding {
         for (int i = 0; i < plainText.length; i++) {
             char c = plainText.charAt(i);
             if(Character.isLetter(c)) {
+                if(Character.isLowerCase(c)) {
+                    char shiftC = (char)( c + key);
+                } else if (Character.isUpperCase(c)) {
+
+                }
 
             } else {
                 cipheredText += c;
