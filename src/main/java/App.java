@@ -20,9 +20,13 @@ public class App {
 
              Decoding output = new Decoding();
              System.out.println("General, would you like to decrypt his majesty's message? If so enter appropriate key");
-             int decryptKey = Integer.parseInt(bufferedReader.readLine());
-             String decryptText = output.decryptText(cipherText, decryptKey);
-             System.out.println("General, his majesty's message is: " + decryptText);
+                 int decryptKey = Integer.parseInt(bufferedReader.readLine());
+             if(decryptKey == inputKey){
+                 String decryptText = output.decryptText(cipherText, decryptKey);
+                 System.out.println("General, his majesty's message is: " + decryptText);
+             } else {
+                 System.out.println("You are not you Majesty's General aye!");
+             }
          }
          catch(IOException e) {
              e.printStackTrace();
