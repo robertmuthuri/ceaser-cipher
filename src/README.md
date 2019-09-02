@@ -6,6 +6,7 @@ This is a project implementing the Caesar Cipher encryption technique. A user is
 ## Technologies Used
 * Java.
 * Gradle.
+* JUnit 5.  
 
 ## Known Bugs
 * There are no known bugs. 
