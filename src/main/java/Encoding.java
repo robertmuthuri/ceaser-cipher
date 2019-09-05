@@ -1,27 +1,36 @@
 public class Encoding {
     private String plainText;
-    private int key;
+    private static int key;
     private String cipheredText;
 
 
-    public  String encryptText(String inputText, int shiftKey) {
-       plainText = inputText;
-       cipheredText = "";
-       key = shiftKey;
+    public Encoding(String plainText, int key){
+        this.plainText = plainText;
+        this.key = key;
+    }
+
+    public  String encryptText() {
+
+        cipheredText = "";
+        if(key > 26 ) {
+            key = key % 26;
+        } else if (key < 0) {
+            key = (key % 26) + 26;
+        }
         for (int i = 0; i < plainText.length(); i++) {
             char c = plainText.charAt(i);
             if(Character.isLetter(c)) {
                 if(Character.isLowerCase(c)) {
                     char shiftC = (char)( c + key);
                     if(shiftC > 'z') {
-                        cipheredText += (char)(shiftC - (26 - shiftC));
+                        cipheredText += (char)(c - (26 - key));
                     } else {
                         cipheredText += shiftC;
                     }
                 } else if (Character.isUpperCase(c)) {
                     char shiftC = (char)( c + key);
                     if(shiftC > 'Z') {
-                        cipheredText += (char)(shiftC - (26 - shiftC));
+                        cipheredText += (char)(c - (26 - key));
                     } else {
                         cipheredText += shiftC;
                     }
@@ -41,15 +50,9 @@ public class Encoding {
     public int getKey() {
         return key;
     }
-
+//
     public int setKey(int key) {
-        if(key > 26 ) {
-            key = key % 26;
-            this.key = key;
-        } else if (key < 0) {
-            key = (key % 26) + 26;
-            this.key = key;
-        }
+        this.key = key;
         return key;
     }
 

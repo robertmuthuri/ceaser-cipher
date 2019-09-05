@@ -1,35 +1,49 @@
 public class Decoding {
-    private String plainText;
     private int key;
     private String cipheredText;
 
-    public  String decryptText(String inputText, int shiftKey) {
-        plainText = inputText;
-        cipheredText = "";
-        key = shiftKey;
-        for (int i = 0; i < plainText.length(); i++) {
-            char c = plainText.charAt(i);
+    public Decoding(String cipheredText, int key){
+        this.cipheredText = cipheredText;
+        this.key = key;
+    }
+
+    public  String decryptText() {
+        String plainText = "";
+        if(key > 26 ) {
+            key = key % 26;
+        } else if (key < 0) {
+            key = (key % 26) + 26;
+        }
+        for (int i = 0; i < cipheredText.length(); i++) {
+            char c = cipheredText.charAt(i);
             if(Character.isLetter(c)) {
                 if(Character.isLowerCase(c)) {
                     char shiftC = (char)( c - key);
                     if(shiftC < 'a') {
-                        cipheredText += (char)(shiftC + (26 - shiftC));
+                        plainText += (char)(c + (26 - key));
                     } else {
-                        cipheredText += shiftC;
+                        plainText += shiftC;
                     }
                 } else if (Character.isUpperCase(c)) {
                     char shiftC = (char)( c - key);
                     if(shiftC < 'A') {
-                        cipheredText += (char)(shiftC + (26 - shiftC));
+                        plainText += (char)(c + (26 - key));
                     } else {
-                        cipheredText += shiftC;
+                        plainText += shiftC;
                     }
                 }
 
             } else {
-                cipheredText += c;
+                plainText += c;
             }
         }
+        return plainText;
+    }
+
+    public String getCipheredText() {
         return cipheredText;
+    }
+    public int getKey() {
+        return key;
     }
 }

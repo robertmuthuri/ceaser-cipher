@@ -14,15 +14,17 @@ public class App {
              inputText = bufferedReader.readLine();
              System.out.println("What be-est they key oh majesty?");
              int inputKey = Integer.parseInt(bufferedReader.readLine());
-             Encoding input = new Encoding();
-             String cipherText = input.encryptText(inputText, inputKey);
+
+             Encoding input = new Encoding(inputText,inputKey);
+
+             String cipherText = input.encryptText();
              System.out.println("Here is your encrypted message oh your majesty: " + cipherText);
 
-             Decoding output = new Decoding();
+             Decoding output = new Decoding(cipherText, inputKey);
              System.out.println("General, would you like to decrypt his majesty's message? If so enter appropriate key");
                  int decryptKey = Integer.parseInt(bufferedReader.readLine());
              if(decryptKey == inputKey){
-                 String decryptText = output.decryptText(cipherText, decryptKey);
+                 String decryptText = output.decryptText();
                  System.out.println("General, his majesty's message is: " + decryptText);
              } else {
                  System.out.println("You are not you Majesty's General aye!");
