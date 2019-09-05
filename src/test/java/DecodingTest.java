@@ -1,7 +1,7 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 
-class DecodingTest {
+public class DecodingTest {
     public Decoding  setNewDecoding(){
         return new Decoding("ciphered text", 2);
     }
@@ -32,17 +32,9 @@ class DecodingTest {
         String expected = setNewDecoding().getCipheredText();
         assertEquals(expected, setNewDecoding().getCipheredText());
     }
-
     @Test
-    public void decryptText_encryptPlainTextToCipherText_String() {
-        setNewDecoding();
-        String expectedInput = setNewDecoding().getCipheredText();
-        String expectedOutput = setNewDecoding().getCipheredText();
+    public void decrypt_decryptReceivedInputText_true() {
+        Decoding testEncoding = new Decoding("Ibbiks ib liev", 34);
+        assertEquals("Attack at dawn", testEncoding.decryptText());
     }
-    @Test
-    public void encrypt_encryptReceivedInputText_true() {
-        Encoding testEncoding = new Encoding("Attack at dawn", 34);
-        assertEquals("Ibbiks ib liev", testEncoding.decryptText());
-    }
-
 }

@@ -25,14 +25,12 @@ public class EncodingTest {
         int expected = testEncoding.setKey(-20);
         assertEquals(expected, testEncoding.getKey());
     }
-
     @Test
     public void encryptText_checkCypherTextInitialized_String() {
         setNewEncoding();
         String expected = setNewEncoding().getCipheredText();
         assertEquals(expected, setNewEncoding().getCipheredText());
     }
-
     @Test
     public void encryptText_encryptPlainTextToCipherText_String() {
         setNewEncoding();
